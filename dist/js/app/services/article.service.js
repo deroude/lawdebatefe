@@ -22,6 +22,9 @@ export var ArticleService = (function (_super) {
     ArticleService.prototype.geArticles = function () {
         return this.get("/article");
     };
+    ArticleService.prototype.getArticle = function (id) {
+        return this.get("/article/" + id);
+    };
     ArticleService.prototype.getResponses = function (articleId) {
         return this.get("/article/" + articleId + "/responses");
     };

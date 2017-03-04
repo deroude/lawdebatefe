@@ -7,6 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+import { EditorDirective } from './directives/editor.directive';
+import { ArticleComponent } from './components/article.component';
 import { ArticleService } from './services/article.service';
 import { LipsumService } from './services/lipsum.service';
 import { FacebookService } from './services/facebook.service';
@@ -32,7 +34,9 @@ export var AppModule = (function () {
             ],
             declarations: [AppComponent,
                 LandingComponent,
-                NotFoundComponent
+                ArticleComponent,
+                NotFoundComponent,
+                EditorDirective
             ],
             providers: [
                 AuthService,

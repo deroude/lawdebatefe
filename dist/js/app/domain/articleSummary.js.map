@@ -1,1 +1,1 @@
-{"version":3,"file":"articleSummary.js","sourceRoot":"","sources":["../../../../app/domain/articleSummary.ts"],"names":[],"mappings":"AAEA;IAAA;IAMA,CAAC;IAAD,wBAAC;AAAD,CAAC,AAND,IAMC"}
+{"version":3,"file":"articleSummary.js","sourceRoot":"","sources":["../../../../app/domain/articleSummary.ts"],"names":[],"mappings":"OAAO,EAAE,cAAc,EAAE,MAAM,WAAW;OACnC,EAAE,UAAU,EAAE,MAAM,WAAW;AACtC;IAAA;QACI,YAAO,GAAY,IAAI,UAAU,EAAE,CAAC;QACpC,mBAAc,GAAgB,IAAI,cAAc,EAAE,CAAC;IAIvD,CAAC;IAAD,wBAAC;AAAD,CAAC,AAND,IAMC"}

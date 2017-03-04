@@ -7,49 +7,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+import { LipsumService } from './../services/lipsum.service';
 import { ArticleService } from './../services/article.service';
-import { FacebookService } from './../services/facebook.service';
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthService } from '../services/auth.service';
-import { FormBuilder, Validators } from '@angular/forms';
 export var LandingComponent = (function () {
-    function LandingComponent(router, route, auth, face, articleService, fb) {
+    function LandingComponent(router, route, articleService, lipsumService) {
         this.router = router;
         this.route = route;
-        this.auth = auth;
-        this.face = face;
         this.articleService = articleService;
-        this.fb = fb;
-        this.authError = false;
-        this.loginForm = fb.group({
-            'username': ['', Validators.required],
-            'password': ['', Validators.required]
-        });
+        this.lipsumService = lipsumService;
     }
     LandingComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.articleService.geArticles().then(function (re) { return _this.articles = re.content; });
-    };
-    LandingComponent.prototype.login = function (_a) {
-        var _this = this;
-        var value = _a.value, valid = _a.valid;
-        if (this.auth.login(value.username, value.password)) {
-            this.route.queryParams.subscribe(function (ps) { return _this.router.navigate([ps['destination'] || '/home']); });
-        }
-        else {
-            this.authError = true;
-        }
-    };
-    LandingComponent.prototype.loginWithFacebook = function () {
-        this.face.login().then(function (response) { return console.log(response); }, function (error) { return console.error(error); });
+        this.articleService.geArticles().then(function (re) {
+            _this.articles = re.content;
+            _this.articles.forEach(function (a) {
+                _this.lipsumService.getText().then(function (rte) {
+                    a.currentVersion.text = '<p>' + rte.join('</p><p>') + '</p>';
+                });
+            });
+        });
     };
     LandingComponent = __decorate([
         Component({
-            selector: 'gr-landing',
+            selector: 'ld-landing',
             templateUrl: '../../templates/landing.component.html'
         }), 
-        __metadata('design:paramtypes', [Router, ActivatedRoute, AuthService, FacebookService, ArticleService, FormBuilder])
+        __metadata('design:paramtypes', [Router, ActivatedRoute, ArticleService, LipsumService])
     ], LandingComponent);
     return LandingComponent;
 }());

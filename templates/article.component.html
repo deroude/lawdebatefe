@@ -1,0 +1,29 @@
+<article class="card mt-3" [class.ld-article-collapsed]="!expanded['main']">
+    <section class="card-block">
+        <h4 class="card-title">{{article.currentVersion.title}}
+            <button (click)="toggleSection('main')" class="btn btn-primary float-sm-right">{{expanded['main']?'Collapse':'Expand'}}</button>
+        </h4>
+        <div class="card-text text-justify" innerHtml="{{article.currentVersion.text}}">
+        </div>
+    </section>
+</article>
+<div class="card-deck mt-2">
+    <section class="card" *ngFor="let p of ['YAY','NAY','ABSTAIN']">
+        <h4 class="card-header bg-success" *ngIf="p==='YAY'&&responses[p]">
+            <span class="badge badge-default">{{responses[p].length}}</span>
+            <span class="badge"><i class="fa fa-thumbs-o-up"></i> Yay!</span>
+        </h4>
+        <h4 class="card-header bg-danger" *ngIf="p==='NAY'&&responses[p]">
+            <span class="badge badge-default">{{responses[p].length}}</span>
+            <span class="badge"><i class="fa fa-thumbs-o-down"></i> Nay!</span>
+        </h4>
+        <h4 class="card-header bg-info" *ngIf="p==='ABSTAIN'&&responses[p]">
+            <span class="badge badge-default">{{responses[p].length}}</span>
+            <span class="badge"><i class="fa fa-hand-rock-o"></i> I dunno ...</span>
+        </h4>
+        <article class="card-block" *ngFor="let r of responses[p]">
+            <h4 class="card-title author-{{r.author.type}}">{{r.author.displayName}}</h4>
+            <div class="card-text text-justify" innerHtml="{{r.text}}"></div>
+        </article>
+    </section>
+</div>

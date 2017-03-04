@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Law Debate Angular 2 FE: an application to debate legal propositions",
   "scripts": {
-    "start":"rimraf dist && rimraf aot && tsc && concurrently \"tsc -w\" \"node-sass --output-style compressed -wo dist/css sass\" \"lite-server\"",
+    "start":"rimraf dist && rimraf aot && tsc && node-sass --output-style compressed -o dist/css sass && concurrently \"tsc -w\" \"node-sass --output-style compressed -wo dist/css sass\" \"lite-server\"",
     "clean":"rimraf dist && rimraf prod && rimraf aot",
     "sass":"node-sass --output-style compressed sass/style.scss prod/css/style.css",
     "build": "npm run clean && npm run aot && npm run rollup && npm run sass && lite-server",

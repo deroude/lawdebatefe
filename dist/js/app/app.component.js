@@ -7,16 +7,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+import { FacebookService } from './services/facebook.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from './services/auth.service';
 import { Component } from '@angular/core';
 export var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(route, router, face, auth) {
+        this.route = route;
+        this.router = router;
+        this.face = face;
+        this.auth = auth;
     }
+    AppComponent.prototype.login = function (_a) {
+        var _this = this;
+        var value = _a.value, valid = _a.valid;
+        if (this.auth.login(value.username, value.password)) {
+            this.route.queryParams.subscribe(function (ps) { return _this.router.navigate([ps['destination'] || '/home']); });
+        }
+        else {
+            this.authError = true;
+        }
+    };
+    AppComponent.prototype.loginWithFacebook = function () {
+        this.face.login().then(function (response) { return console.log(response); }, function (error) { return console.error(error); });
+    };
     AppComponent = __decorate([
         Component({
-            selector: 'gr-app',
+            selector: 'ld-app',
             templateUrl: '../templates/app.component.html',
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [ActivatedRoute, Router, FacebookService, AuthService])
     ], AppComponent);
     return AppComponent;
 }());

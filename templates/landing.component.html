@@ -1,4 +1,17 @@
-<article *ngFor="let a of articles">
-    <h1>{{a.currentVersion.title}}</h1>
-    <p>{{a.currentVersion.text}}</p>
+<article class="card mt-3 ld-article-collapsed" *ngFor="let a of articles">
+    <section class="card-block">
+        <div class="card-title">
+            <h4>{{a.currentVersion.title}}</h4>
+            <span class="font-weight-bold">{{a.article.agency}}</span> 
+            <time pubdate="pubdate">{{a.currentVersion.publishDate| date: 'dd/MM/yyyy'}}</time>
+        </div>
+        <div class="card-text text-justify" innerHtml="{{a.currentVersion.text}}">
+        </div>
+    </section>
+    <footer class="card-footer bg-primary">
+        <span class="badge badge-success"><i class="fa fa-thumbs-o-up"></i> {{a.yayVotes}} Yay</span>
+        <span class="badge badge-danger"><i class="fa fa-thumbs-o-down"></i> {{a.nayVotes}} Nay</span>
+        <span class="badge badge-info"><i class="fa fa-hand-rock-o"></i> {{a.abstainVotes}} Abstain</span>
+        <a class="btn btn-sm btn-primary float-sm-right" [routerLink]="['/article',a.article.id]"><i class="fa fa-map-o"></i> View article</a>
+    </footer>
 </article>

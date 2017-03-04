@@ -13,23 +13,27 @@ import * as import4 from '@angular/core/src/metadata/view';
 import * as import5 from '@angular/core/src/linker/view_type';
 import * as import6 from '@angular/core/src/change_detection/constants';
 import * as import7 from '@angular/core/src/linker/component_factory';
-import * as import8 from '../node_modules/@angular/forms/src/directives/ng_form.ngfactory';
-import * as import9 from '../node_modules/@angular/forms/src/directives/ng_control_status.ngfactory';
-import * as import10 from '@angular/core/src/linker/view_container';
-import * as import11 from '../node_modules/@angular/router/src/directives/router_outlet.ngfactory';
-import * as import12 from '@angular/router/src/router_outlet_map';
-import * as import13 from '@angular/core/src/linker/component_factory_resolver';
-import * as import14 from '@angular/forms/src/directives/ng_form';
-import * as import15 from '@angular/forms/src/directives/control_container';
-import * as import16 from '@angular/forms/src/directives/ng_control_status';
-import * as import17 from '@angular/router/src/directives/router_outlet';
+import * as import8 from '@angular/router/src/router_state';
+import * as import9 from '@angular/router/src/router';
+import * as import10 from '../../app/services/facebook.service';
+import * as import11 from '../../app/services/auth.service';
+import * as import12 from '../node_modules/@angular/forms/src/directives/ng_form.ngfactory';
+import * as import13 from '../node_modules/@angular/forms/src/directives/ng_control_status.ngfactory';
+import * as import14 from '@angular/core/src/linker/view_container';
+import * as import15 from '../node_modules/@angular/router/src/directives/router_outlet.ngfactory';
+import * as import16 from '@angular/router/src/router_outlet_map';
+import * as import17 from '@angular/core/src/linker/component_factory_resolver';
+import * as import18 from '@angular/forms/src/directives/ng_form';
+import * as import19 from '@angular/forms/src/directives/control_container';
+import * as import20 from '@angular/forms/src/directives/ng_control_status';
+import * as import21 from '@angular/router/src/directives/router_outlet';
 export class Wrapper_AppComponent {
   /*private*/ _eventHandler:Function;
   context:import0.AppComponent;
   /*private*/ _changed:boolean;
-  constructor() {
+  constructor(p0:any,p1:any,p2:any,p3:any) {
     this._changed = false;
-    this.context = new import0.AppComponent();
+    this.context = new import0.AppComponent(p0,p1,p2,p3);
   }
   ngOnDetach(view:import1.AppView<any>,componentView:import1.AppView<any>,el:any):void {
   }
@@ -59,9 +63,9 @@ class View_AppComponent_Host0 extends import1.AppView<any> {
     super(View_AppComponent_Host0,renderType_AppComponent_Host,import5.ViewType.HOST,viewUtils,parentView,parentIndex,parentElement,import6.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import7.ComponentRef<any> {
-    this._el_0 = import3.selectOrCreateRenderHostElement(this.renderer,'gr-app',import3.EMPTY_INLINE_ARRAY,rootSelector,(null as any));
+    this._el_0 = import3.selectOrCreateRenderHostElement(this.renderer,'ld-app',import3.EMPTY_INLINE_ARRAY,rootSelector,(null as any));
     this.compView_0 = new View_AppComponent0(this.viewUtils,this,0,this._el_0);
-    this._AppComponent_0_3 = new Wrapper_AppComponent();
+    this._AppComponent_0_3 = new Wrapper_AppComponent(this.injectorGet(import8.ActivatedRoute,this.parentIndex),this.injectorGet(import9.Router,this.parentIndex),this.injectorGet(import10.FacebookService,this.parentIndex),this.injectorGet(import11.AuthService,this.parentIndex));
     this.compView_0.create(this._AppComponent_0_3.context);
     this.init(this._el_0,((<any>this.renderer).directRenderer? (null as any): [this._el_0]),(null as any));
     return new import7.ComponentRef_<any>(0,this,this._el_0,this._AppComponent_0_3.context);
@@ -81,7 +85,7 @@ class View_AppComponent_Host0 extends import1.AppView<any> {
     cb(this._el_0,ctx);
   }
 }
-export const AppComponentNgFactory:import7.ComponentFactory<import0.AppComponent> = new import7.ComponentFactory<import0.AppComponent>('gr-app',View_AppComponent_Host0,import0.AppComponent);
+export const AppComponentNgFactory:import7.ComponentFactory<import0.AppComponent> = new import7.ComponentFactory<import0.AppComponent>('ld-app',View_AppComponent_Host0,import0.AppComponent);
 const styles_AppComponent:any[] = ([] as any[]);
 var renderType_AppComponent:import2.RenderComponentType = import3.createRenderComponentType('',0,import4.ViewEncapsulation.None,styles_AppComponent,{});
 export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {
@@ -104,9 +108,9 @@ export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {
   _el_16:any;
   _text_17:any;
   _el_18:any;
-  _NgForm_18_3:import8.Wrapper_NgForm;
+  _NgForm_18_3:import12.Wrapper_NgForm;
   _ControlContainer_18_4:any;
-  _NgControlStatusGroup_18_5:import9.Wrapper_NgControlStatusGroup;
+  _NgControlStatusGroup_18_5:import13.Wrapper_NgControlStatusGroup;
   _text_19:any;
   _el_20:any;
   _text_21:any;
@@ -124,9 +128,9 @@ export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {
   _el_33:any;
   _text_34:any;
   _el_35:any;
-  _NgForm_35_3:import8.Wrapper_NgForm;
+  _NgForm_35_3:import12.Wrapper_NgForm;
   _ControlContainer_35_4:any;
-  _NgControlStatusGroup_35_5:import9.Wrapper_NgControlStatusGroup;
+  _NgControlStatusGroup_35_5:import13.Wrapper_NgControlStatusGroup;
   _text_36:any;
   _el_37:any;
   _text_38:any;
@@ -167,8 +171,8 @@ export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {
   _text_73:any;
   _text_74:any;
   _el_75:any;
-  /*private*/ _vc_75:import10.ViewContainer;
-  _RouterOutlet_75_5:import11.Wrapper_RouterOutlet;
+  /*private*/ _vc_75:import14.ViewContainer;
+  _RouterOutlet_75_5:import15.Wrapper_RouterOutlet;
   _text_76:any;
   constructor(viewUtils:import3.ViewUtils,parentView:import1.AppView<any>,parentIndex:number,parentElement:any) {
     super(View_AppComponent0,renderType_AppComponent,import5.ViewType.COMPONENT,viewUtils,parentView,parentIndex,parentElement,import6.ChangeDetectorStatus.CheckAlways);
@@ -194,9 +198,9 @@ export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {
     this._el_16 = import3.createRenderElement(this.renderer,this._el_11,'div',new import3.InlineArray2(2,'class','nav navbar-nav mr-auto'),(null as any));
     this._text_17 = this.renderer.createText(this._el_16,'\n                    ',(null as any));
     this._el_18 = import3.createRenderElement(this.renderer,this._el_16,'form',new import3.InlineArray2(2,'class','form-inline'),(null as any));
-    this._NgForm_18_3 = new import8.Wrapper_NgForm((null as any),(null as any));
+    this._NgForm_18_3 = new import12.Wrapper_NgForm((null as any),(null as any));
     this._ControlContainer_18_4 = this._NgForm_18_3.context;
-    this._NgControlStatusGroup_18_5 = new import9.Wrapper_NgControlStatusGroup(this._ControlContainer_18_4);
+    this._NgControlStatusGroup_18_5 = new import13.Wrapper_NgControlStatusGroup(this._ControlContainer_18_4);
     this._text_19 = this.renderer.createText(this._el_18,'\n                        ',(null as any));
     this._el_20 = import3.createRenderElement(this.renderer,this._el_18,'div',new import3.InlineArray2(2,'class','input-group mb-2 mr-sm-2 mb-sm-0'),(null as any));
     this._text_21 = this.renderer.createText(this._el_20,'\n                            ',(null as any));
@@ -214,9 +218,9 @@ export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {
     this._el_33 = import3.createRenderElement(this.renderer,this._el_11,'div',new import3.InlineArray2(2,'class','nav navbar-nav ml-auto'),(null as any));
     this._text_34 = this.renderer.createText(this._el_33,'\n                    ',(null as any));
     this._el_35 = import3.createRenderElement(this.renderer,this._el_33,'form',new import3.InlineArray2(2,'class','form-inline'),(null as any));
-    this._NgForm_35_3 = new import8.Wrapper_NgForm((null as any),(null as any));
+    this._NgForm_35_3 = new import12.Wrapper_NgForm((null as any),(null as any));
     this._ControlContainer_35_4 = this._NgForm_35_3.context;
-    this._NgControlStatusGroup_35_5 = new import9.Wrapper_NgControlStatusGroup(this._ControlContainer_35_4);
+    this._NgControlStatusGroup_35_5 = new import13.Wrapper_NgControlStatusGroup(this._ControlContainer_35_4);
     this._text_36 = this.renderer.createText(this._el_35,'\n                        ',(null as any));
     this._el_37 = import3.createRenderElement(this.renderer,this._el_35,'label',new import3.InlineArray4(4,'class','sr-only','for','loginEmail'),(null as any));
     this._text_38 = this.renderer.createText(this._el_37,'Username',(null as any));
@@ -257,8 +261,8 @@ export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {
     this._text_73 = this.renderer.createText(this._el_2,'\n    ',(null as any));
     this._text_74 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     this._el_75 = import3.createRenderElement(this.renderer,this._el_0,'router-outlet',import3.EMPTY_INLINE_ARRAY,(null as any));
-    this._vc_75 = new import10.ViewContainer(75,0,this,this._el_75);
-    this._RouterOutlet_75_5 = new import11.Wrapper_RouterOutlet(this.parentView.injectorGet(import12.RouterOutletMap,this.parentIndex),this._vc_75.vcRef,this.parentView.injectorGet(import13.ComponentFactoryResolver,this.parentIndex),(null as any));
+    this._vc_75 = new import14.ViewContainer(75,0,this,this._el_75);
+    this._RouterOutlet_75_5 = new import15.Wrapper_RouterOutlet(this.parentView.injectorGet(import16.RouterOutletMap,this.parentIndex),this._vc_75.vcRef,this.parentView.injectorGet(import17.ComponentFactoryResolver,this.parentIndex),(null as any));
     this._text_76 = this.renderer.createText(this._el_0,'\n',(null as any));
     var disposable_0:Function = import3.subscribeToRenderElement(this,this._el_18,new import3.InlineArray4(4,'submit',(null as any),'reset',(null as any)),this.eventHandler(this.handleEvent_18));
     var disposable_1:Function = import3.subscribeToRenderElement(this,this._el_35,new import3.InlineArray4(4,'submit',(null as any),'reset',(null as any)),this.eventHandler(this.handleEvent_35));
@@ -349,13 +353,13 @@ export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import14.NgForm) && ((18 <= requestNodeIndex) && (requestNodeIndex <= 30)))) { return this._NgForm_18_3.context; }
-    if (((token === import15.ControlContainer) && ((18 <= requestNodeIndex) && (requestNodeIndex <= 30)))) { return this._ControlContainer_18_4; }
-    if (((token === import16.NgControlStatusGroup) && ((18 <= requestNodeIndex) && (requestNodeIndex <= 30)))) { return this._NgControlStatusGroup_18_5.context; }
-    if (((token === import14.NgForm) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 69)))) { return this._NgForm_35_3.context; }
-    if (((token === import15.ControlContainer) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 69)))) { return this._ControlContainer_35_4; }
-    if (((token === import16.NgControlStatusGroup) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 69)))) { return this._NgControlStatusGroup_35_5.context; }
-    if (((token === import17.RouterOutlet) && (75 === requestNodeIndex))) { return this._RouterOutlet_75_5.context; }
+    if (((token === import18.NgForm) && ((18 <= requestNodeIndex) && (requestNodeIndex <= 30)))) { return this._NgForm_18_3.context; }
+    if (((token === import19.ControlContainer) && ((18 <= requestNodeIndex) && (requestNodeIndex <= 30)))) { return this._ControlContainer_18_4; }
+    if (((token === import20.NgControlStatusGroup) && ((18 <= requestNodeIndex) && (requestNodeIndex <= 30)))) { return this._NgControlStatusGroup_18_5.context; }
+    if (((token === import18.NgForm) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 69)))) { return this._NgForm_35_3.context; }
+    if (((token === import19.ControlContainer) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 69)))) { return this._ControlContainer_35_4; }
+    if (((token === import20.NgControlStatusGroup) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 69)))) { return this._NgControlStatusGroup_35_5.context; }
+    if (((token === import21.RouterOutlet) && (75 === requestNodeIndex))) { return this._RouterOutlet_75_5.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {

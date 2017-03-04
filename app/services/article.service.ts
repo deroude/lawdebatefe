@@ -13,6 +13,10 @@ export class ArticleService extends BasicService {
         return this.get("/article");
     }
 
+    public getArticle(id:number):Promise<LawArticleSummary>{
+        return this.get("/article/"+id);
+    }
+
     public getResponses(articleId:number):Promise<Page<Response>>{
         return this.get("/article/"+articleId+"/responses")
     }

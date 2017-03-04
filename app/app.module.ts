@@ -1,3 +1,5 @@
+import { EditorDirective } from './directives/editor.directive';
+import { ArticleComponent } from './components/article.component';
 import { ArticleService } from './services/article.service';
 import { LipsumService } from './services/lipsum.service';
 import { FacebookService } from './services/facebook.service';
@@ -22,7 +24,9 @@ import { LandingComponent } from './components/landing.component';
   ],
   declarations: [AppComponent,
     LandingComponent,
-    NotFoundComponent
+    ArticleComponent,
+    NotFoundComponent,
+    EditorDirective
   ],
   providers: [
     AuthService,

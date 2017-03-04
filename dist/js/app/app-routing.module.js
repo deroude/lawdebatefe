@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+import { ArticleComponent } from './components/article.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './components/not_found.component';
@@ -14,6 +15,7 @@ import { LandingComponent } from './components/landing.component';
 var routes = [
     { path: '', redirectTo: '/landing', pathMatch: 'full' },
     { path: 'landing', component: LandingComponent },
+    { path: 'article/:id', component: ArticleComponent, pathMatch: 'full' },
     { path: '**', component: NotFoundComponent }
 ];
 export var AppRoutingModule = (function () {

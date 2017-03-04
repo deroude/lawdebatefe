@@ -7,18 +7,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component } from '@angular/core';
-export var NotFoundComponent = (function () {
-    function NotFoundComponent() {
+import { Directive } from '@angular/core';
+// Tinymce directive
+export var EditorDirective = (function () {
+    function EditorDirective() {
     }
-    NotFoundComponent.prototype.ngOnInit = function () { };
-    NotFoundComponent = __decorate([
-        Component({
-            selector: 'ld-not-found',
-            templateUrl: '../../templates/not_found.component.html'
+    EditorDirective.prototype.ngOnInit = function () {
+        tinymce.init({
+            selector: 'textarea',
+            schema: 'html5',
+        });
+    };
+    EditorDirective = __decorate([
+        Directive({
+            inputs: ['htmlEditor'],
+            selector: '[htmlEditor]'
         }), 
         __metadata('design:paramtypes', [])
-    ], NotFoundComponent);
-    return NotFoundComponent;
+    ], EditorDirective);
+    return EditorDirective;
 }());
-//# sourceMappingURL=not_found.component.js.map
+//# sourceMappingURL=editor.directive.js.map
