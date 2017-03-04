@@ -7,17 +7,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+import { ArticleService } from './../services/article.service';
 import { FacebookService } from './../services/facebook.service';
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
 export var LandingComponent = (function () {
-    function LandingComponent(router, route, auth, face, fb) {
+    function LandingComponent(router, route, auth, face, articleService, fb) {
         this.router = router;
         this.route = route;
         this.auth = auth;
         this.face = face;
+        this.articleService = articleService;
         this.fb = fb;
         this.authError = false;
         this.loginForm = fb.group({
@@ -25,7 +27,10 @@ export var LandingComponent = (function () {
             'password': ['', Validators.required]
         });
     }
-    LandingComponent.prototype.ngOnInit = function () { };
+    LandingComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.articleService.geArticles().then(function (re) { return _this.articles = re.content; });
+    };
     LandingComponent.prototype.login = function (_a) {
         var _this = this;
         var value = _a.value, valid = _a.valid;
@@ -44,7 +49,7 @@ export var LandingComponent = (function () {
             selector: 'gr-landing',
             templateUrl: '../../templates/landing.component.html'
         }), 
-        __metadata('design:paramtypes', [Router, ActivatedRoute, AuthService, FacebookService, FormBuilder])
+        __metadata('design:paramtypes', [Router, ActivatedRoute, AuthService, FacebookService, ArticleService, FormBuilder])
     ], LandingComponent);
     return LandingComponent;
 }());

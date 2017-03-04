@@ -7,6 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+import { ArticleService } from './services/article.service';
+import { LipsumService } from './services/lipsum.service';
 import { FacebookService } from './services/facebook.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -34,6 +36,8 @@ export var AppModule = (function () {
             ],
             providers: [
                 AuthService,
+                LipsumService,
+                ArticleService,
                 FacebookService
             ],
             bootstrap: [AppComponent]

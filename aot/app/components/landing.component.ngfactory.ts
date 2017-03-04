@@ -17,14 +17,21 @@ import * as import8 from '@angular/router/src/router';
 import * as import9 from '@angular/router/src/router_state';
 import * as import10 from '../../../app/services/auth.service';
 import * as import11 from '../../../app/services/facebook.service';
-import * as import12 from '@angular/forms/src/form_builder';
+import * as import12 from '../../../app/services/article.service';
+import * as import13 from '@angular/forms/src/form_builder';
+import * as import14 from '@angular/core/src/linker/view_container';
+import * as import15 from '@angular/core/src/change_detection/change_detection_util';
+import * as import16 from '../../node_modules/@angular/common/src/directives/ng_for.ngfactory';
+import * as import17 from '@angular/core/src/linker/template_ref';
+import * as import18 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import19 from '@angular/common/src/directives/ng_for';
 export class Wrapper_LandingComponent {
   /*private*/ _eventHandler:Function;
   context:import0.LandingComponent;
   /*private*/ _changed:boolean;
-  constructor(p0:any,p1:any,p2:any,p3:any,p4:any) {
+  constructor(p0:any,p1:any,p2:any,p3:any,p4:any,p5:any) {
     this._changed = false;
-    this.context = new import0.LandingComponent(p0,p1,p2,p3,p4);
+    this.context = new import0.LandingComponent(p0,p1,p2,p3,p4,p5);
   }
   ngOnDetach(view:import1.AppView<any>,componentView:import1.AppView<any>,el:any):void {
   }
@@ -57,7 +64,7 @@ class View_LandingComponent_Host0 extends import1.AppView<any> {
   createInternal(rootSelector:string):import7.ComponentRef<any> {
     this._el_0 = import3.selectOrCreateRenderHostElement(this.renderer,'gr-landing',import3.EMPTY_INLINE_ARRAY,rootSelector,(null as any));
     this.compView_0 = new View_LandingComponent0(this.viewUtils,this,0,this._el_0);
-    this._LandingComponent_0_3 = new Wrapper_LandingComponent(this.injectorGet(import8.Router,this.parentIndex),this.injectorGet(import9.ActivatedRoute,this.parentIndex),this.injectorGet(import10.AuthService,this.parentIndex),this.injectorGet(import11.FacebookService,this.parentIndex),this.injectorGet(import12.FormBuilder,this.parentIndex));
+    this._LandingComponent_0_3 = new Wrapper_LandingComponent(this.injectorGet(import8.Router,this.parentIndex),this.injectorGet(import9.ActivatedRoute,this.parentIndex),this.injectorGet(import10.AuthService,this.parentIndex),this.injectorGet(import11.FacebookService,this.parentIndex),this.injectorGet(import12.ArticleService,this.parentIndex),this.injectorGet(import13.FormBuilder,this.parentIndex));
     this.compView_0.create(this._LandingComponent_0_3.context);
     this.init(this._el_0,((<any>this.renderer).directRenderer? (null as any): [this._el_0]),(null as any));
     return new import7.ComponentRef_<any>(0,this,this._el_0,this._LandingComponent_0_3.context);
@@ -79,14 +86,94 @@ class View_LandingComponent_Host0 extends import1.AppView<any> {
 }
 export const LandingComponentNgFactory:import7.ComponentFactory<import0.LandingComponent> = new import7.ComponentFactory<import0.LandingComponent>('gr-landing',View_LandingComponent_Host0,import0.LandingComponent);
 const styles_LandingComponent:any[] = ([] as any[]);
+class View_LandingComponent1 extends import1.AppView<any> {
+  _el_0:any;
+  _text_1:any;
+  _el_2:any;
+  _text_3:any;
+  _text_4:any;
+  _el_5:any;
+  _text_6:any;
+  _text_7:any;
+  /*private*/ _expr_8:any;
+  /*private*/ _expr_9:any;
+  constructor(viewUtils:import3.ViewUtils,parentView:import1.AppView<any>,parentIndex:number,parentElement:any,declaredViewContainer:import14.ViewContainer) {
+    super(View_LandingComponent1,renderType_LandingComponent,import5.ViewType.EMBEDDED,viewUtils,parentView,parentIndex,parentElement,import6.ChangeDetectorStatus.CheckAlways,declaredViewContainer);
+    this._expr_8 = import15.UNINITIALIZED;
+    this._expr_9 = import15.UNINITIALIZED;
+  }
+  createInternal(rootSelector:string):import7.ComponentRef<any> {
+    this._el_0 = import3.createRenderElement(this.renderer,(null as any),'article',import3.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'\n    ',(null as any));
+    this._el_2 = import3.createRenderElement(this.renderer,this._el_0,'h1',import3.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_3 = this.renderer.createText(this._el_2,'',(null as any));
+    this._text_4 = this.renderer.createText(this._el_0,'\n    ',(null as any));
+    this._el_5 = import3.createRenderElement(this.renderer,this._el_0,'p',import3.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_6 = this.renderer.createText(this._el_5,'',(null as any));
+    this._text_7 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this.init(this._el_0,((<any>this.renderer).directRenderer? (null as any): [
+      this._el_0,
+      this._text_1,
+      this._el_2,
+      this._text_3,
+      this._text_4,
+      this._el_5,
+      this._text_6,
+      this._text_7
+    ]
+    ),(null as any));
+    return (null as any);
+  }
+  detectChangesInternal(throwOnChange:boolean):void {
+    const currVal_8:any = import3.inlineInterpolate(1,'',this.context.$implicit.currentVersion.title,'');
+    if (import3.checkBinding(throwOnChange,this._expr_8,currVal_8)) {
+      this.renderer.setText(this._text_3,currVal_8);
+      this._expr_8 = currVal_8;
+    }
+    const currVal_9:any = import3.inlineInterpolate(1,'',this.context.$implicit.currentVersion.text,'');
+    if (import3.checkBinding(throwOnChange,this._expr_9,currVal_9)) {
+      this.renderer.setText(this._text_6,currVal_9);
+      this._expr_9 = currVal_9;
+    }
+  }
+  visitRootNodesInternal(cb:any,ctx:any):void {
+    cb(this._el_0,ctx);
+  }
+}
 var renderType_LandingComponent:import2.RenderComponentType = import3.createRenderComponentType('',0,import4.ViewEncapsulation.None,styles_LandingComponent,{});
 export class View_LandingComponent0 extends import1.AppView<import0.LandingComponent> {
+  _anchor_0:any;
+  /*private*/ _vc_0:import14.ViewContainer;
+  _TemplateRef_0_5:any;
+  _NgFor_0_6:import16.Wrapper_NgFor;
   constructor(viewUtils:import3.ViewUtils,parentView:import1.AppView<any>,parentIndex:number,parentElement:any) {
     super(View_LandingComponent0,renderType_LandingComponent,import5.ViewType.COMPONENT,viewUtils,parentView,parentIndex,parentElement,import6.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import7.ComponentRef<any> {
     const parentRenderNode:any = this.renderer.createViewRoot(this.parentElement);
-    this.init((null as any),((<any>this.renderer).directRenderer? (null as any): ([] as any[])),(null as any));
+    this._anchor_0 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
+    this._vc_0 = new import14.ViewContainer(0,(null as any),this,this._anchor_0);
+    this._TemplateRef_0_5 = new import17.TemplateRef_(this,0,this._anchor_0);
+    this._NgFor_0_6 = new import16.Wrapper_NgFor(this._vc_0.vcRef,this._TemplateRef_0_5,this.parentView.injectorGet(import18.IterableDiffers,this.parentIndex),this.ref);
+    this.init((null as any),((<any>this.renderer).directRenderer? (null as any): [this._anchor_0]),(null as any));
+    return (null as any);
+  }
+  injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
+    if (((token === import17.TemplateRef) && (0 === requestNodeIndex))) { return this._TemplateRef_0_5; }
+    if (((token === import19.NgFor) && (0 === requestNodeIndex))) { return this._NgFor_0_6.context; }
+    return notFoundResult;
+  }
+  detectChangesInternal(throwOnChange:boolean):void {
+    const currVal_0_0_0:any = this.context.articles;
+    this._NgFor_0_6.check_ngForOf(currVal_0_0_0,throwOnChange,false);
+    this._NgFor_0_6.ngDoCheck(this,this._anchor_0,throwOnChange);
+    this._vc_0.detectChangesInNestedViews(throwOnChange);
+  }
+  destroyInternal():void {
+    this._vc_0.destroyNestedViews();
+  }
+  createEmbeddedViewInternal(nodeIndex:number):import1.AppView<any> {
+    if ((nodeIndex == 0)) { return new View_LandingComponent1(this.viewUtils,this,0,this._anchor_0,this._vc_0); }
     return (null as any);
   }
 }

@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Caveat:400,700&subset=latin-ext');
-h1.logo {
-  font-family: 'Caveat', cursive;
-  font-weight: bold;
-  font-size: xx-large;
+@media (min-width: 980px) {
+  body {
+    padding-top: 60px;
+    padding-bottom: 42px;
+  }
 }
 
 select:invalid {
@@ -18,15 +18,6 @@ select:invalid {
 
 h5.modal-title {
   display: inline;
-}
-
-img.logo {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: 250px;
-  float: left;
-  margin: -50px -30px 0 -50px;
 }
 
 .preload {

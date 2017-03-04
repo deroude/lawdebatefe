@@ -1,3 +1,6 @@
+import { LawArticleSummary } from './../domain/articleSummary';
+import { LawArticle } from './../domain/article';
+import { ArticleService } from './../services/article.service';
 import { FacebookService } from './../services/facebook.service';
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
@@ -12,11 +15,13 @@ export class LandingComponent implements OnInit {
 
     loginForm: FormGroup;
     authError: boolean = false;
+    articles:LawArticleSummary[];
 
     constructor(private router: Router,
      private route: ActivatedRoute,
         private auth: AuthService,
         private face:FacebookService,
+        private articleService:ArticleService,
         private fb: FormBuilder
     ) {
         this.loginForm = fb.group({
@@ -25,7 +30,9 @@ export class LandingComponent implements OnInit {
         });
     }
 
-    ngOnInit() { }
+    ngOnInit() { 
+        this.articleService.geArticles().then(re=>this.articles=re.content);
+    }
 
     login({value, valid}: { value: any, valid: boolean }) {
         if (this.auth.login(value.username, value.password)) {

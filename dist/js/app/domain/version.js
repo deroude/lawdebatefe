@@ -1,6 +1,6 @@
-export var Version = (function () {
-    function Version() {
+export var ArticleVersion = (function () {
+    function ArticleVersion() {
     }
-    return Version;
+    return ArticleVersion;
 }());
 //# sourceMappingURL=version.js.map

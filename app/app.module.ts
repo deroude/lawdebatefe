@@ -1,3 +1,5 @@
+import { ArticleService } from './services/article.service';
+import { LipsumService } from './services/lipsum.service';
 import { FacebookService } from './services/facebook.service';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,6 +26,8 @@ import { LandingComponent } from './components/landing.component';
   ],
   providers: [
     AuthService,
+    LipsumService,
+    ArticleService,
     FacebookService
   ],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-export class Version{
+export class ArticleVersion{
     id:number;
     publishDate:Date;
     title:string;
