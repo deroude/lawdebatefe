@@ -1,0 +1,42 @@
+<div class="jumbotron jumbotron-fluid">
+    <img class="logo" src="img/logo.png">
+    <h1 class="logo">Giftr</h1>
+</div>
+<div class="content">
+    <div *ngIf="!qsets" class="preload"></div>
+    <div *ngIf="qsets">
+        <ul class="nav nav-pills">
+            <li *ngFor="let qset of qsets" class="nav-item">
+                <a (click)="goTo(qset.orderNumber)" class="nav-link" [class.disabled]="qset.orderNumber>reach" [class.active]="qset.orderNumber===currentQset.orderNumber">{{qset.literal}}</a>
+            </li>
+        </ul>
+        <form class="card" #qform="ngForm" (ngSubmit)="onSubmit(qform.value)">
+            <div *ngFor="let q of currentQset.questions" class="form-group">
+                <label for="ans-{{q.literal}}">{{q.literal}}</label>
+                <select name="{{q.literal}}" *ngIf="q.questionType==='CHOICE'" class="form-control" id="ans-{{q.literal}}" required #qa (change)='selectAnswer(q.id,qa.value)'>
+                    <option value="" disabled selected hidden>Please select a value</option>
+                    <option *ngFor="let a of q.answers" [value]="a.id">{{a.literal}}</option>
+                    </select>
+                <input name="{{q.literal}}" [(ngModel)]="answers[q.id]" class="form-control" *ngIf="q.questionType==='TEXT'" type="text"
+                    id="ans-{{q.literal}}" required placeholder="Please type your text here" />
+                <input name="{{q.literal}}" [(ngModel)]="answers[q.id]" class="form-control" *ngIf="q.questionType==='NUMBER'" type="number"
+                    id="ans-{{q.literal}}" required min="0" max="99" placeholder="Please enter a number 0-99" />
+            </div>
+            <div class="form-group">
+                <button type="submit" (click)="action='NEXT'" [class.disabled]="currentIndex===max" class="btn btn-primary">Next</button>
+                <button type="submit" (click)="action='GIMME'" class="btn btn-success">Gimme</button>
+            </div>
+        </form>
+        <div *ngIf="products" class="row">
+            <div class="col-sm-4" *ngFor="let product of products">
+                <div class="card text-center">
+                    <img *ngIf="product.imgUrl" class="card-img-top" src="{{product.imgUrl}}" alt="{{product.literal}}">
+                    <img *ngIf="!product.imgUrl" class="card-img-top" src="img/product.png" alt="{{product.literal}}">
+                    <div class="card-block">
+                        <h3 class="card-title"><a href="{{product.url}}" target="_blank">{{product.literal}}</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
