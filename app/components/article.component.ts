@@ -13,7 +13,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ArticleComponent implements OnInit {
 
     authError: boolean = false;
-    expanded: { [key: string]: boolean } = {};
+    expanded: { [key: string]: number } = {};
     article: LawArticleSummary = new LawArticleSummary();
     responses: { [key: string]: Response[] } = {};
 
@@ -45,11 +45,11 @@ export class ArticleComponent implements OnInit {
         });
     }
 
-    toggleSection(section: string): void {
-        if (this.expanded[section] === true) {
-            this.expanded[section] = false;
+    toggleSection(section: string,id:number): void {
+        if (this.expanded[section] === id) {
+            this.expanded[section] = null;
         } else {
-            this.expanded[section] = true;
+            this.expanded[section] = id;
         }
     }
 }

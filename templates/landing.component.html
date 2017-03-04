@@ -3,7 +3,8 @@
         <div class="card-title">
             <h4>{{a.currentVersion.title}}</h4>
             <span class="font-weight-bold">{{a.article.agency}}</span> 
-            <time pubdate="pubdate">{{a.currentVersion.publishDate| date: 'dd/MM/yyyy'}}</time>
+            <time pubdate="pubdate">{{a.currentVersion.publishDate| date: 'dd/MM/yyyy'}}</time> 
+            <span class="font-italic">{{a.article.proposedBy}}</span> 
         </div>
         <div class="card-text text-justify" innerHtml="{{a.currentVersion.text}}">
         </div>

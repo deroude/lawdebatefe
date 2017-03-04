@@ -44,12 +44,12 @@ export var ArticleComponent = (function () {
             });
         });
     };
-    ArticleComponent.prototype.toggleSection = function (section) {
-        if (this.expanded[section] === true) {
-            this.expanded[section] = false;
+    ArticleComponent.prototype.toggleSection = function (section, id) {
+        if (this.expanded[section] === id) {
+            this.expanded[section] = null;
         }
         else {
-            this.expanded[section] = true;
+            this.expanded[section] = id;
         }
     };
     ArticleComponent = __decorate([
