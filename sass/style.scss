@@ -1,38 +1,54 @@
 @import url('https://fonts.googleapis.com/css?family=Caveat:400,700&subset=latin-ext');
-
-h1.logo{
+h1.logo {
   font-family: 'Caveat', cursive;
   font-weight: bold;
-  font-size: xx-large; 
-}
- 
-select:invalid{ 
-  color:lightgray; 
+  font-size: xx-large;
 }
 
-.modal-backdrop{
-  opacity:0.7;
-  &.in{opacity:.7;}
+select:invalid {
+  color: lightgray;
 }
 
-h5.modal-title{
-  display:inline;
-}
-
-img.logo{    
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: 250px;
-    float: left;
-    margin: -50px -30px 0 -50px; 
-}
-
-  .preload{
-    width:128px;
-    height: 128px;
-    position:fixed;
-    top:40%;
-    left:45%;
-    background: url('/img/preload.gif');
+.modal-backdrop {
+  opacity: 0.7;
+  &.in {
+    opacity: .7;
   }
+}
+
+h5.modal-title {
+  display: inline;
+}
+
+img.logo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 250px;
+  float: left;
+  margin: -50px -30px 0 -50px;
+}
+
+.preload {
+  width: 128px;
+  height: 128px;
+  position: fixed;
+  top: 40%;
+  left: 45%;
+  background: url('/img/preload.gif');
+}
+
+.btn-xs, .btn-group-xs>.btn {
+    padding: 0.15rem 0.3rem;
+    font-size: 0.775rem;
+    border-radius: 0.2rem;
+}
+
+.form-control-xs,
+.input-group-xs>.form-control,
+.input-group-xs>.input-group-addon,
+.input-group-xs>.input-group-btn>.btn {
+  padding: 0.15rem 0.3rem;
+  font-size: 0.775rem;
+  border-radius: 0.2rem;
+}

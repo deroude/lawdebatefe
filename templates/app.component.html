@@ -1,3 +1,41 @@
 <div class="container page-container">
+    <nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <a href="/" class="navbar-brand">Law Debate</a>
+                <div class="nav navbar-nav mr-auto">
+                    <form class="form-inline">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <input type="text" class="form-control form-control-xs" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="nav navbar-nav ml-auto">
+                    <form class="form-inline">
+                        <label class="sr-only" for="loginEmail">Username</label>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                            <input type="email" required class="form-control form-control-xs" id="loginEmail" placeholder="Email">
+                        </div>
+                        <label class="sr-only" for="loginPassword">Password</label>
+                        <div class="input-group mb-2 mr-2 mb-sm-0">
+                            <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                            <input type="password" required class="form-control form-control-xs" id="loginPassword" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm mr-2">Login</button>
+                        <button type="button" class="btn btn-primary btn-sm mr-2"><i class="fa fa-facebook"></i> Facebook</button>
+                        <button type="button" class="btn btn-primary btn-sm mr-2"><i class="fa fa-google"></i> Google</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
     <router-outlet></router-outlet>
 </div>
