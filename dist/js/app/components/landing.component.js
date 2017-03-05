@@ -20,7 +20,14 @@ export var LandingComponent = (function () {
     }
     LandingComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.articleService.geArticles().then(function (re) {
+        this.route.queryParams.subscribe(function (p) {
+            _this.search = p['search'];
+            _this.loadArticles();
+        });
+    };
+    LandingComponent.prototype.loadArticles = function () {
+        var _this = this;
+        this.articleService.geArticles(this.search).then(function (re) {
             _this.articles = re.content;
             _this.articles.forEach(function (a) {
                 _this.lipsumService.getText().then(function (rte) {

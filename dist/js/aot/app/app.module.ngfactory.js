@@ -437,8 +437,7 @@ var AppModuleInjector = (function (_super) {
                         },
                         {
                             path: 'article/:id',
-                            component: import52.ArticleComponent,
-                            pathMatch: 'full'
+                            component: import52.ArticleComponent
                         },
                         {
                             path: '**',

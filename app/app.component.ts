@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   authError: boolean;
+  search:string;
 
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -28,5 +29,9 @@ export class AppComponent {
       (response: Object) => console.log(response),
       (error: any) => console.error(error)
     );
+  }
+
+  doSearch():void{
+    this.router.navigate(["/landing"],{queryParams:{'search':this.search}});
   }
 }

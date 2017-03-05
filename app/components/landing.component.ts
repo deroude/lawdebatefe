@@ -12,16 +12,23 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LandingComponent implements OnInit {
 
     articles: LawArticleSummary[];
+    search: string;
 
     constructor(private router: Router,
         private route: ActivatedRoute,
         private articleService: ArticleService,
         private lipsumService: LipsumService
-    ) {
-    }
+    ) { }
 
     ngOnInit() {
-        this.articleService.geArticles().then(re => {
+        this.route.queryParams.subscribe(p => {
+            this.search = p['search'];
+            this.loadArticles();
+        });
+    }
+
+    loadArticles(): void {
+        this.articleService.geArticles(this.search).then(re => {
             this.articles = re.content;
             this.articles.forEach(a => {
                 this.lipsumService.getText().then(rte => {
@@ -30,5 +37,4 @@ export class LandingComponent implements OnInit {
             });
         });
     }
-
 }

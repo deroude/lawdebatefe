@@ -98,8 +98,7 @@ class AppRoutingModuleInjector extends import0.NgModuleInjector<import1.AppRouti
         ,
         {
           path: 'article/:id',
-          component: import16.ArticleComponent,
-          pathMatch: 'full'
+          component: import16.ArticleComponent
         }
         ,
         {

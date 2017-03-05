@@ -19,14 +19,21 @@ import * as import10 from '../../app/services/facebook.service';
 import * as import11 from '../../app/services/auth.service';
 import * as import12 from '../node_modules/@angular/forms/src/directives/ng_form.ngfactory';
 import * as import13 from '../node_modules/@angular/forms/src/directives/ng_control_status.ngfactory';
-import * as import14 from '@angular/core/src/linker/view_container';
-import * as import15 from '../node_modules/@angular/router/src/directives/router_outlet.ngfactory';
-import * as import16 from '@angular/router/src/router_outlet_map';
-import * as import17 from '@angular/core/src/linker/component_factory_resolver';
-import * as import18 from '@angular/forms/src/directives/ng_form';
-import * as import19 from '@angular/forms/src/directives/control_container';
-import * as import20 from '@angular/forms/src/directives/ng_control_status';
-import * as import21 from '@angular/router/src/directives/router_outlet';
+import * as import14 from '../node_modules/@angular/forms/src/directives/default_value_accessor.ngfactory';
+import * as import15 from '../node_modules/@angular/forms/src/directives/ng_model.ngfactory';
+import * as import16 from '@angular/core/src/linker/view_container';
+import * as import17 from '../node_modules/@angular/router/src/directives/router_outlet.ngfactory';
+import * as import18 from '@angular/core/src/linker/element_ref';
+import * as import19 from '@angular/router/src/router_outlet_map';
+import * as import20 from '@angular/core/src/linker/component_factory_resolver';
+import * as import21 from '@angular/forms/src/directives/default_value_accessor';
+import * as import22 from '@angular/forms/src/directives/control_value_accessor';
+import * as import23 from '@angular/forms/src/directives/ng_model';
+import * as import24 from '@angular/forms/src/directives/ng_control';
+import * as import25 from '@angular/forms/src/directives/ng_control_status';
+import * as import26 from '@angular/forms/src/directives/ng_form';
+import * as import27 from '@angular/forms/src/directives/control_container';
+import * as import28 from '@angular/router/src/directives/router_outlet';
 export class Wrapper_AppComponent {
   /*private*/ _eventHandler:Function;
   context:import0.AppComponent;
@@ -115,6 +122,11 @@ export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {
   _el_20:any;
   _text_21:any;
   _el_22:any;
+  _DefaultValueAccessor_22_3:import14.Wrapper_DefaultValueAccessor;
+  _NG_VALUE_ACCESSOR_22_4:any[];
+  _NgModel_22_5:import15.Wrapper_NgModel;
+  _NgControl_22_6:any;
+  _NgControlStatus_22_7:import13.Wrapper_NgControlStatus;
   _text_23:any;
   _el_24:any;
   _text_25:any;
@@ -171,8 +183,8 @@ export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {
   _text_73:any;
   _text_74:any;
   _el_75:any;
-  /*private*/ _vc_75:import14.ViewContainer;
-  _RouterOutlet_75_5:import15.Wrapper_RouterOutlet;
+  /*private*/ _vc_75:import16.ViewContainer;
+  _RouterOutlet_75_5:import17.Wrapper_RouterOutlet;
   _text_76:any;
   constructor(viewUtils:import3.ViewUtils,parentView:import1.AppView<any>,parentIndex:number,parentElement:any) {
     super(View_AppComponent0,renderType_AppComponent,import5.ViewType.COMPONENT,viewUtils,parentView,parentIndex,parentElement,import6.ChangeDetectorStatus.CheckAlways);
@@ -204,7 +216,12 @@ export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {
     this._text_19 = this.renderer.createText(this._el_18,'\n                        ',(null as any));
     this._el_20 = import3.createRenderElement(this.renderer,this._el_18,'div',new import3.InlineArray2(2,'class','input-group mb-2 mr-sm-2 mb-sm-0'),(null as any));
     this._text_21 = this.renderer.createText(this._el_20,'\n                            ',(null as any));
-    this._el_22 = import3.createRenderElement(this.renderer,this._el_20,'input',new import3.InlineArray8(6,'class','form-control form-control-xs','placeholder','Search for...','type','text'),(null as any));
+    this._el_22 = import3.createRenderElement(this.renderer,this._el_20,'input',new import3.InlineArray8(8,'class','form-control form-control-xs','name','search','placeholder','Search for...','type','text'),(null as any));
+    this._DefaultValueAccessor_22_3 = new import14.Wrapper_DefaultValueAccessor(this.renderer,new import18.ElementRef(this._el_22));
+    this._NG_VALUE_ACCESSOR_22_4 = [this._DefaultValueAccessor_22_3.context];
+    this._NgModel_22_5 = new import15.Wrapper_NgModel(this._ControlContainer_18_4,(null as any),(null as any),this._NG_VALUE_ACCESSOR_22_4);
+    this._NgControl_22_6 = this._NgModel_22_5.context;
+    this._NgControlStatus_22_7 = new import13.Wrapper_NgControlStatus(this._NgControl_22_6);
     this._text_23 = this.renderer.createText(this._el_20,'\n                            ',(null as any));
     this._el_24 = import3.createRenderElement(this.renderer,this._el_20,'span',new import3.InlineArray2(2,'class','input-group-btn'),(null as any));
     this._text_25 = this.renderer.createText(this._el_24,'\n                                ',(null as any));
@@ -261,11 +278,14 @@ export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {
     this._text_73 = this.renderer.createText(this._el_2,'\n    ',(null as any));
     this._text_74 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     this._el_75 = import3.createRenderElement(this.renderer,this._el_0,'router-outlet',import3.EMPTY_INLINE_ARRAY,(null as any));
-    this._vc_75 = new import14.ViewContainer(75,0,this,this._el_75);
-    this._RouterOutlet_75_5 = new import15.Wrapper_RouterOutlet(this.parentView.injectorGet(import16.RouterOutletMap,this.parentIndex),this._vc_75.vcRef,this.parentView.injectorGet(import17.ComponentFactoryResolver,this.parentIndex),(null as any));
+    this._vc_75 = new import16.ViewContainer(75,0,this,this._el_75);
+    this._RouterOutlet_75_5 = new import17.Wrapper_RouterOutlet(this.parentView.injectorGet(import19.RouterOutletMap,this.parentIndex),this._vc_75.vcRef,this.parentView.injectorGet(import20.ComponentFactoryResolver,this.parentIndex),(null as any));
     this._text_76 = this.renderer.createText(this._el_0,'\n',(null as any));
-    var disposable_0:Function = import3.subscribeToRenderElement(this,this._el_18,new import3.InlineArray4(4,'submit',(null as any),'reset',(null as any)),this.eventHandler(this.handleEvent_18));
-    var disposable_1:Function = import3.subscribeToRenderElement(this,this._el_35,new import3.InlineArray4(4,'submit',(null as any),'reset',(null as any)),this.eventHandler(this.handleEvent_35));
+    var disposable_0:Function = import3.subscribeToRenderElement(this,this._el_18,new import3.InlineArray8(6,'ngSubmit',(null as any),'submit',(null as any),'reset',(null as any)),this.eventHandler(this.handleEvent_18));
+    this._NgForm_18_3.subscribe(this,this.eventHandler(this.handleEvent_18),true);
+    var disposable_1:Function = import3.subscribeToRenderElement(this,this._el_22,new import3.InlineArray8(6,'ngModelChange',(null as any),'input',(null as any),'blur',(null as any)),this.eventHandler(this.handleEvent_22));
+    this._NgModel_22_5.subscribe(this,this.eventHandler(this.handleEvent_22),true);
+    var disposable_2:Function = import3.subscribeToRenderElement(this,this._el_35,new import3.InlineArray4(4,'submit',(null as any),'reset',(null as any)),this.eventHandler(this.handleEvent_35));
     this.init((null as any),((<any>this.renderer).directRenderer? (null as any): [
       this._el_0,
       this._text_1,
@@ -347,33 +367,48 @@ export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {
     ]
     ),[
       disposable_0,
-      disposable_1
+      disposable_1,
+      disposable_2
     ]
     );
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import18.NgForm) && ((18 <= requestNodeIndex) && (requestNodeIndex <= 30)))) { return this._NgForm_18_3.context; }
-    if (((token === import19.ControlContainer) && ((18 <= requestNodeIndex) && (requestNodeIndex <= 30)))) { return this._ControlContainer_18_4; }
-    if (((token === import20.NgControlStatusGroup) && ((18 <= requestNodeIndex) && (requestNodeIndex <= 30)))) { return this._NgControlStatusGroup_18_5.context; }
-    if (((token === import18.NgForm) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 69)))) { return this._NgForm_35_3.context; }
-    if (((token === import19.ControlContainer) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 69)))) { return this._ControlContainer_35_4; }
-    if (((token === import20.NgControlStatusGroup) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 69)))) { return this._NgControlStatusGroup_35_5.context; }
-    if (((token === import21.RouterOutlet) && (75 === requestNodeIndex))) { return this._RouterOutlet_75_5.context; }
+    if (((token === import21.DefaultValueAccessor) && (22 === requestNodeIndex))) { return this._DefaultValueAccessor_22_3.context; }
+    if (((token === import22.NG_VALUE_ACCESSOR) && (22 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_22_4; }
+    if (((token === import23.NgModel) && (22 === requestNodeIndex))) { return this._NgModel_22_5.context; }
+    if (((token === import24.NgControl) && (22 === requestNodeIndex))) { return this._NgControl_22_6; }
+    if (((token === import25.NgControlStatus) && (22 === requestNodeIndex))) { return this._NgControlStatus_22_7.context; }
+    if (((token === import26.NgForm) && ((18 <= requestNodeIndex) && (requestNodeIndex <= 30)))) { return this._NgForm_18_3.context; }
+    if (((token === import27.ControlContainer) && ((18 <= requestNodeIndex) && (requestNodeIndex <= 30)))) { return this._ControlContainer_18_4; }
+    if (((token === import25.NgControlStatusGroup) && ((18 <= requestNodeIndex) && (requestNodeIndex <= 30)))) { return this._NgControlStatusGroup_18_5.context; }
+    if (((token === import26.NgForm) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 69)))) { return this._NgForm_35_3.context; }
+    if (((token === import27.ControlContainer) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 69)))) { return this._ControlContainer_35_4; }
+    if (((token === import25.NgControlStatusGroup) && ((35 <= requestNodeIndex) && (requestNodeIndex <= 69)))) { return this._NgControlStatusGroup_35_5.context; }
+    if (((token === import28.RouterOutlet) && (75 === requestNodeIndex))) { return this._RouterOutlet_75_5.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
     this._NgForm_18_3.ngDoCheck(this,this._el_18,throwOnChange);
     this._NgControlStatusGroup_18_5.ngDoCheck(this,this._el_18,throwOnChange);
+    this._DefaultValueAccessor_22_3.ngDoCheck(this,this._el_22,throwOnChange);
+    const currVal_22_1_0:any = 'search';
+    this._NgModel_22_5.check_name(currVal_22_1_0,throwOnChange,false);
+    const currVal_22_1_1:any = this.context.search;
+    this._NgModel_22_5.check_model(currVal_22_1_1,throwOnChange,false);
+    this._NgModel_22_5.ngDoCheck(this,this._el_22,throwOnChange);
+    this._NgControlStatus_22_7.ngDoCheck(this,this._el_22,throwOnChange);
     this._NgForm_35_3.ngDoCheck(this,this._el_35,throwOnChange);
     this._NgControlStatusGroup_35_5.ngDoCheck(this,this._el_35,throwOnChange);
     this._RouterOutlet_75_5.ngDoCheck(this,this._el_75,throwOnChange);
     this._vc_75.detectChangesInNestedViews(throwOnChange);
     this._NgControlStatusGroup_18_5.checkHost(this,this,this._el_18,throwOnChange);
+    this._NgControlStatus_22_7.checkHost(this,this,this._el_22,throwOnChange);
     this._NgControlStatusGroup_35_5.checkHost(this,this,this._el_35,throwOnChange);
   }
   destroyInternal():void {
     this._vc_75.destroyNestedViews();
+    this._NgModel_22_5.ngOnDestroy();
     this._NgForm_18_3.ngOnDestroy();
     this._NgForm_35_3.ngOnDestroy();
     this._RouterOutlet_75_5.ngOnDestroy();
@@ -382,6 +417,20 @@ export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {
     this.markPathToRootAsCheckOnce();
     var result:boolean = true;
     result = (this._NgForm_18_3.handleEvent(eventName,$event) && result);
+    if ((eventName == 'ngSubmit')) {
+      const pd_sub_0:any = ((<any>this.context.doSearch()) !== false);
+      result = (pd_sub_0 && result);
+    }
+    return result;
+  }
+  handleEvent_22(eventName:string,$event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    var result:boolean = true;
+    result = (this._DefaultValueAccessor_22_3.handleEvent(eventName,$event) && result);
+    if ((eventName == 'ngModelChange')) {
+      const pd_sub_0:any = ((<any>(this.context.search = $event)) !== false);
+      result = (pd_sub_0 && result);
+    }
     return result;
   }
   handleEvent_35(eventName:string,$event:any):boolean {

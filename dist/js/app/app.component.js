@@ -31,6 +31,9 @@ export var AppComponent = (function () {
     AppComponent.prototype.loginWithFacebook = function () {
         this.face.login().then(function (response) { return console.log(response); }, function (error) { return console.error(error); });
     };
+    AppComponent.prototype.doSearch = function () {
+        this.router.navigate(["/landing"], { queryParams: { 'search': this.search } });
+    };
     AppComponent = __decorate([
         Component({
             selector: 'ld-app',

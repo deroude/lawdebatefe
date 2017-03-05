@@ -301,8 +301,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
         ,
         {
           path: 'article/:id',
-          component: import52.ArticleComponent,
-          pathMatch: 'full'
+          component: import52.ArticleComponent
         }
         ,
         {

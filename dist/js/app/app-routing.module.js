@@ -15,7 +15,7 @@ import { LandingComponent } from './components/landing.component';
 var routes = [
     { path: '', redirectTo: '/landing', pathMatch: 'full' },
     { path: 'landing', component: LandingComponent },
-    { path: 'article/:id', component: ArticleComponent, pathMatch: 'full' },
+    { path: 'article/:id', component: ArticleComponent },
     { path: '**', component: NotFoundComponent }
 ];
 export var AppRoutingModule = (function () {

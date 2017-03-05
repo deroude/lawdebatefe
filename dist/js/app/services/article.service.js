@@ -19,8 +19,8 @@ export var ArticleService = (function (_super) {
     function ArticleService() {
         _super.apply(this, arguments);
     }
-    ArticleService.prototype.geArticles = function () {
-        return this.get("/article");
+    ArticleService.prototype.geArticles = function (search) {
+        return this.get("/article" + (search ? "?search=" + search : ""));
     };
     ArticleService.prototype.getArticle = function (id) {
         return this.get("/article/" + id);

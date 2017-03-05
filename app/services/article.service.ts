@@ -9,8 +9,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ArticleService extends BasicService {
 
-    public geArticles(): Promise<Page<LawArticleSummary>> {
-        return this.get("/article");
+    public geArticles(search:String): Promise<Page<LawArticleSummary>> {
+        return this.get("/article"+(search?"?search="+search:""));
     }
 
     public getArticle(id:number):Promise<LawArticleSummary>{
